@@ -100,11 +100,11 @@ const Chatbot = () => {
 
   return (
     <>
-      <div className={`w-[100%] h-[100vh] bg-gradient-to-r from-[#0B1E47] via-[#000000] to-[#0C2A6B]
+      <div className={`w-[100%] min-h-screen bg-gradient-to-r from-[#0B1E47] via-[#000000] to-[#0C2A6B]
  relative flex justify-center ${show ? '' : 'items-center'} py-10`}>
 
         {show  ? (
-          <div className='overflow-y-auto w-full max-h-[65vh] 2xl:max-h-[75vh] flex flex-col gap-5 px-10'>
+          <div className='overflow-y-auto w-full max-h-[77vh] 2xl:max-h-[75vh] flex flex-col gap-5 px-10'>
            
             {chat.map((item, idx) => (
               <div key={idx} className={`flex ${item.type === 'user' ? 'justify-end' : 'justify-start'} text`}>
@@ -130,7 +130,7 @@ const Chatbot = () => {
         }
 
       
-        <textarea type="text" value={ques} onChange={(e) => setQues(e.target.value)} ref={inputref} className='w-[95%] pr-25 break-words bg-[#0A192F] text-white absolute bottom-5 pb-15 px-5 text-2xl pt-3 rounded-2xl my-10 outline-none 	border border-blue-500 shadow-[0px_0px_10px_#1E40AF] overflow-y-auto h-28 resize-none' placeholder='Enter Your Prompt Here...' onKeyDown={handlekeydown}/>
+        <textarea type="text" value={ques} onChange={(e) => setQues(e.target.value)} ref={inputref} className='w-[95%] pr-25 break-words bg-[#0A192F] text-white absolute bottom-5 pb-15 px-5 text-2xl pt-3 rounded-2xl outline-none border border-blue-500 shadow-[0px_0px_10px_#1E40AF] h-28 resize-none' placeholder='Enter Your Prompt Here...' onKeyDown={handlekeydown}/>
         <button className='bg-yellow-200 cursor-pointer fixed xl:right-14 bottom-9 p-5 rounded-[50%] w-20 h-20 mx-2 bg-gradient-to-r from-blue-500 to-blue-900 lg:right-10 md:right-9 sm:right-7 right-5.5 block' onClick={getdata}>
           <img src={send} alt="send icon" className='filter invert'/>
         </button>
