@@ -38,7 +38,9 @@ const Chatbot = () => {
   }, [])
 
   useEffect(() => {
-    chatref.current?.scrollIntoView({behavior : 'smooth'})
+    setTimeout(() => {
+      chatref.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }, 100); 
   },[chat])
 
 
@@ -130,8 +132,8 @@ const Chatbot = () => {
         }
 
       
-        <textarea type="text" value={ques} onChange={(e) => setQues(e.target.value)} ref={inputref} className='w-[95%] pr-25 break-words bg-[#0A192F] text-white absolute bottom-5 pb-15 px-5 text-2xl pt-3 rounded-2xl outline-none border border-blue-500 shadow-[0px_0px_10px_#1E40AF] h-28 resize-none' placeholder='Enter Your Prompt Here...' onKeyDown={handlekeydown}/>
-        <button className='bg-yellow-200 cursor-pointer fixed xl:right-14 bottom-9 p-5 rounded-[50%] w-20 h-20 mx-2 bg-gradient-to-r from-blue-500 to-blue-900 lg:right-10 md:right-9 sm:right-7 right-5.5 block' onClick={getdata}>
+        <textarea type="text" value={ques} onChange={(e) => setQues(e.target.value)} ref={inputref} className='w-[95%] pr-25 break-words bg-[#0A192F] text-white absolute bottom-0 px-5 text-2xl pt-3 rounded-2xl outline-none border border-blue-500 shadow-[0px_0px_10px_#1E40AF] h-28 resize-none' placeholder='Enter Your Prompt Here...' onKeyDown={handlekeydown}/>
+        <button className='bg-yellow-200 cursor-pointer fixed xl:right-14 bottom-4 p-5 rounded-[50%] w-20 h-20 mx-2 bg-gradient-to-r from-blue-500 to-blue-900 lg:right-10 md:right-9 sm:right-7 right-5.5 block' onClick={getdata}>
           <img src={send} alt="send icon" className='filter invert'/>
         </button>
         </div>
