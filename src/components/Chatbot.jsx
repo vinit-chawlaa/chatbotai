@@ -102,11 +102,11 @@ const Chatbot = () => {
 
   return (
     <>
-      <div className={`w-[100%] h-[100lvh] bg-gradient-to-r from-[#0B1E47] via-[#000000] to-[#0C2A6B]
+      <div className={`w-[100%] h-[100svh] bg-gradient-to-r from-[#0B1E47] via-[#000000] to-[#0C2A6B]
  relative flex justify-center ${show ? '' : 'items-center'} py-5`}>
 
         {show  ? (
-          <div className='overflow-y-auto w-full max-h-[70lvh] flex flex-col gap-5 px-10'>
+          <div className='overflow-y-auto w-full max-h-[70svh] flex flex-col gap-5 px-10'>
            
             {chat.map((item, idx) => (
               <div key={idx} className={`flex ${item.type === 'user' ? 'justify-end' : 'justify-start'} text`}>
